@@ -7,7 +7,7 @@
  * @return {Object[]}
  */
 function transformStateWithClones(state, actions) {
-  let result = { ...state };
+  const result = { ...state };
   const solution = [];
 
   for (const object of actions) {
@@ -24,8 +24,7 @@ function transformStateWithClones(state, actions) {
         delete result[key];
       }
     }
-    solution.push(result);
-    result = { ...state };
+    solution.push({ ...result });
   }
 
   return solution;
